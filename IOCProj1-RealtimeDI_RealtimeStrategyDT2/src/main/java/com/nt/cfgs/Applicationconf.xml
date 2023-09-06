@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- connection -->
+	<bean id="dcon" class="com.nt.dao.ConnectonConnect" />
+	<!-- DAO Class config -->
+	<bean id="cusDAO" class="com.nt.dao.CustomrerDAOIMP">
+		<constructor-arg ref="dcon" />
+	</bean>
+	<!-- service class config -->
+	<bean id="cusSer"
+		class="com.nt.service.CustomerMnagementServiceIMP">
+		<constructor-arg  ref="cusDAO" />
+	</bean>
+	<!-- controle class config -->
+	<bean id="cuscont"
+		class="com.nt.controler.CustomerManementControle">
+		<constructor-arg  ref="cusSer" />
+	</bean>
+
+</beans>
