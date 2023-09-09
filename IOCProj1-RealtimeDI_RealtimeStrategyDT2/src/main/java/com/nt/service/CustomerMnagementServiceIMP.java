@@ -24,7 +24,7 @@ public final class  CustomerMnagementServiceIMP implements ICustomerManagementSe
 		int count=dao.Insert(bo);
 		//ternary operation 
 if(count==1) {
-   return "custemer inserted succesfully";
+   return "custemer inserted succesfully "+" intrest = "+intAmt;
    
 }
 else
